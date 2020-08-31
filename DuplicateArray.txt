@@ -1,0 +1,37 @@
+package duplicate;
+import java.util.*;
+
+public class Remove {
+int arr[],i=0,j,n;//variable declaration
+public void getData(){
+	Scanner sc=new Scanner(System.in);
+	System.out.println("no of terms you want to input:");
+	n=sc.nextInt();//no of inputs what u want to input
+	arr=new int[n];
+	for(j=0;j<n;j++){
+		arr[j]=sc.nextInt();//enter the numbers
+	}
+	sc.close();
+}
+public void Operation(){
+	Arrays.sort(arr);//sorted the input array using this method
+	for(j=1;j<=n-1;j++){//j starts from index 1 and continue upto n(length of the array)-1 and i starts from index 0
+		if(arr[i]!=arr[j]){//if both the index don't match then enter into this iteration
+			i++;//i is incremented first +1...means next index 
+			arr[i]=arr[j];//value of jth index assigned to incremented ith index...means if the condition doesn't satisfy means both number is same...by using this method we can remove the duplicate number
+		}
+		
+	}
+for(j=0;j<=i;j++){//here i= value we get from previous loop and loop continued up to ith index because the loop starts from 0,if i=3 in previous loop...means no of term i+1
+	System.out.println(arr[j]);//simply print the expected output
+}
+}
+
+}
+class Test{
+	public static void main(String[] args){
+		Remove r=new Remove();
+		r.getData();
+		r.Operation();
+	}
+}
